@@ -1,1 +1,4 @@
-SOURCES = digiflip.cpp
+QT += widgets
+TARGET = digiflip
+TEMPLATE = app
+SOURCES += digiflip.cpp

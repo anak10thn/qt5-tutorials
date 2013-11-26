@@ -5,5 +5,6 @@
 * [bloom](bloom)
 * [dragmove](dragmove)
 * [deconstructive](deconstructive)
+* [digiflip](digiflip)
 
 
