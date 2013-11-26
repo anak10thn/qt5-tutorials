@@ -2,7 +2,7 @@
 ###ibnu yahya <anak10thn@gmail.com>###
 
 ####list :####
-* [bloom|bloom]
+* [[bloom | bloom]]
 * dragmove
 * deconstructive
 
