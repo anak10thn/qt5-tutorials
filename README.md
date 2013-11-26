@@ -1,4 +1,8 @@
-graphics-dojo-qt5
-=================
+##graphics dojo porting to Qt5##
+###ibnu yahya <anak10thn@gmail.com>###
 
-graphics dojo Qt5
+####Changelog####
+* bloom
+* dragmove
+
+
