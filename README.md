@@ -3,7 +3,7 @@
 
 ####list :####
 * [bloom](bloom)
-* dragmove
-* deconstructive
+* [dragmove](dragmove)
+* [deconstructive](deconstructive)
 
 
