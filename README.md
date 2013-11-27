@@ -7,5 +7,5 @@
 * [dragmove](dragmove)
 * [deconstructive](deconstructive)
 * [digiflip](digiflip)
-
+* [dragremote](dragremote)
 
