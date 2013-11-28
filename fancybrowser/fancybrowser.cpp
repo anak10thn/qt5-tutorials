@@ -23,7 +23,7 @@
 
 #include <QtCore>
 #include <QtGui>
-#include <QtWebKit>
+#include <QtWebKitWidgets>
 
 // for Qt 4.5, we use JQuery
 // for Qt >= 4.6, we use the QWebElement API

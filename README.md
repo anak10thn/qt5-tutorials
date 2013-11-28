@@ -8,4 +8,5 @@
 * [deconstructive](deconstructive)
 * [digiflip](digiflip)
 * [dragremote](dragremote)
+* [fancybrowser](fancybrowser)
 
