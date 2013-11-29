@@ -9,4 +9,6 @@
 * [digiflip](digiflip)
 * [dragremote](dragremote)
 * [fancybrowser](fancybrowser)
+* [flickable](flickable)
+* [flickcharm](flickcharm)
 

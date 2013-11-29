@@ -25,7 +25,7 @@
 #define FLICKCHARM_H
 
 #include <QObject>
-
+#include <QtWebKitWidgets>
 class FlickCharmPrivate;
 class QWidget;
 
