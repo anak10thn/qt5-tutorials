@@ -20,6 +20,9 @@
 ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 **
 ****************************************************************************/
+#include <QApplication>
+#include <QObject>
+#include <QtWidgets>
 
 #ifndef FLICKABLE_H
 #define FLICKABLE_H
