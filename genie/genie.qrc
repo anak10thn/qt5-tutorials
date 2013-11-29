@@ -1,0 +1,11 @@
+<RCC>
+ <qresource>
+ <file>benedikte.jpg</file>
+ <file>castle.jpg</file>
+ <file>cookies.jpg</file>
+ <file>laptops.jpg</file>
+ <file>plasma.jpg</file>
+ <file>screenie.jpg</file>
+ <file>tagliatelle.jpg</file>
+ </qresource>
+</RCC>
