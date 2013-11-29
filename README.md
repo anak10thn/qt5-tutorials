@@ -11,4 +11,5 @@
 * [fancybrowser](fancybrowser)
 * [flickable](flickable)
 * [flickcharm](flickcharm)
+* [genie](genie)
 

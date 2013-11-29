@@ -4,3 +4,4 @@ SOURCES = genie.cpp
 RESOURCES = genie.qrc
 CONFIG += console
 FORMS += 
+QT += widgets

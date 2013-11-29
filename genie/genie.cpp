@@ -22,7 +22,12 @@
 ****************************************************************************/
 
 #include <QtGui>
-
+#include <QGraphicsObject>
+#include <QAbstractScrollArea>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QApplication>
+#include <QPushButton>
 #include <math.h>
 
 #define SLIDE_WIDTH 200
