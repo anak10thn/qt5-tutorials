@@ -23,8 +23,9 @@
 
 #include <QtCore>
 #include <QtGui>
+#include <QtWebKitWidgets>
 #include <QtWebKit>
-
+#include <QUrl>
 #include "ui_form.h"
 
 #if QT_VERSION < 0x0040500
@@ -67,8 +68,10 @@ private slots:
         form.locationEdit->hide();
 
         QUrl url("http://www.google.com/search");
+        QUrlQuery qurl;
         QString query = "Weather in " + form.locationEdit->text();
-        url.addEncodedQueryItem("q", QUrl::toPercentEncoding(query));
+        qurl.addQueryItem("q", QUrl::toPercentEncoding(query));
+        url.setQuery(qurl);
         webPage->mainFrame()->setUrl(url);
     }
 
