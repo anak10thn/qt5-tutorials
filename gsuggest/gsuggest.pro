@@ -3,7 +3,7 @@ TARGET   = gsuggest
 SOURCES  = gsuggest.cpp
 FORMS    = search.ui
 
-QT += network
+QT += network widgets webkitwidgets
 
 SOURCES += ../dragmove/dragmovecharm.cpp
 HEADERS += ../dragmove/dragmovecharm.h
