@@ -12,4 +12,5 @@
 * [flickable](flickable)
 * [flickcharm](flickcharm)
 * [genie](genie)
-
+* [gsuggest](gsuggest)
+* [gweather](gweather)
