@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HTML Editor Demo</title>
+</head>
+
+<body>
+<h1 align="center">WYSIWYG HTML Editor</h1>
+
+<!-- This is just a comment. We start here -->
+
+<p>WYSIWYG HTML Editor can be realized using QtWebKit, by utilizing the contentEditable property of a web page. If this is set to true, &quot;live editing&quot; of the web page is possible.</p>
+
+<p>If you are viewing this document in the <i>HTML Editor</i> demo, you can edit this HTML file to explore QtWebKit editing features. We have included some comments in each of the following sections to encourage you to experiment.</p>
+
+<h2>Formatting</h2>
+
+<p>This editor supports <b>bold</b>, <i>italic</i>, <u>underline</u>, and <s>strikethrough</s> character formatting. If you place the cursor in a region of formatted text, the controls in the tool bars will change to reflect the current formatting.</p>
+
+<p>The text can use different font, like <span style="font-family: Helvetica">Helvetica</span> or <span style="font-family: Times">Times</span>. Even <span style="color: rgb(128, 0, 0)">with</span> <span style="color: rgb(128, 128, 0)">different</span> <span style="color: rgb(128, 0, 128)">colors</span>, and can be <span style="background-color: rgb(255, 255, 128)">highlighted</span> as well.
+Different font sizes are supported: <span style="font-size: xx-small">xx-small</span>, <span style="font-size: x-small">x-small</span>, <span style="font-size: small">small</span>, <span style="font-size: medium">medium</span>, <span style="font-size: x-large">x-large</span>, and <span style="font-size: xx-large">xx-large</span>.  </p>
+
+<blockquote>Paragraphs can be indented, for example like this one. In HTML term, this is known as "blockquote".</blockquote>
+
+<p>Paragraphs can be formatted so that the text is left-aligned, right-aligned, centered, or fully justified.</p>
+<p style="text-align: center;">This paragraph is centered, ...</p>
+<p style="text-align: right;">while this one is right-aligned, ...</p>
+<p>Try changing the alignment of some text and resize the editor to see how the text layout changes.</p>
+
+<p>Each paragraph can be set as a heading. Use menu <i>Format</i>, <i>Style</i> and choose a proper heading, Heading 1 is for the highest-level.
+A heading can be reverted back to a normal paragraph by choosing Paragraph in that Style menu.</p>
+
+<h2>Lists</h2>
+
+<p>Both bulleted and numbered lists are supported.</p>
+
+<p>Here is an example of bulleted list:</p>
+<ul>
+<li>Mercurius</li>
+<li>Venus</li>
+<li>Earth</li>
+</ul>
+
+<p>And this is an example of numbered list:</p>
+<ol>
+<li>Mars</li>
+<li>Jupiter</li>
+<li>Uranus</li>
+<li>Saturnus</li>
+</ol>
+
+<h2>Images</h2>
+
+<p>As with normal HTML document, images can be inserted in the text, like this example:</p>
+
+<p><img src="qrc:/qtlogo.png"></p>
+
+<p>To insert an image, use the icon <img src="qrc:/images/image-x-generic.png"> in the tool bar or use the menu <i>Edit</i>, <i>Insert Image</i>. Try to delete the above image and replace it with a new one.</p>
+
+<h2>Hyperlinks</h2>
+
+<p>Since this is an HTML editor, it is not complete without the support for create hyperlinks. You can do this by using the icon <img src="qrc:/images/text-html.png"> in the tool bar or menu <i>Edit</i> , <i>Create Link</i>. Here is an example of a link to <a href="http://www.qtsoftware.com">Qt Software website</a>.</p>
+
+<p>If a link is clicked, it will be opened in the default web browser. A confirmation dialog pops up before the link is opened.</p>
+
+<h2>Undo and Redo</h2>
+
+<p>Full support for undo and redo operations is built into the editing feature. Try making changes to this document and press Ctrl+Z to undo them. You can always recover the original contents of the document.</span> </p>
+
+<h2>Note</h2>
+<p>Icons used in this program are taken from the public domain <a href="http://tango.freedesktop.org/Tango_Desktop_Project">Tango Desktop Project</a>.</p>
+
+</body></html>
