@@ -22,6 +22,7 @@
 ****************************************************************************/
 
 #include <QtGui>
+#include <QtWidgets>
 #include <QtNetwork>
 
 #include <iostream>
