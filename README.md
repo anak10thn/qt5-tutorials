@@ -14,3 +14,4 @@
 * [genie](genie)
 * [gsuggest](gsuggest)
 * [gweather](gweather)
+* [halfscale](halfscale)
