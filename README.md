@@ -15,3 +15,4 @@
 * [gsuggest](gsuggest)
 * [gweather](gweather)
 * [halfscale](halfscale)
+* [hsvpie](hsvpie)
