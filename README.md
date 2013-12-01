@@ -17,3 +17,5 @@
 * [halfscale](halfscale)
 * [hsvpie](hsvpie)
 * [htmleditor](htmleditor)
+* [imagetint](imagetint)
+* [imgzoom](imgzoom)

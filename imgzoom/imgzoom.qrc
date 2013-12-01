@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>cookies.jpg</file>
+    </qresource>
+</RCC>
