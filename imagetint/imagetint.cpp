@@ -23,6 +23,7 @@
 
 #include <QtGui>
 #include <QtNetwork>
+#include <QtWidgets>
 
 #include "ui_parameters.h"
 
