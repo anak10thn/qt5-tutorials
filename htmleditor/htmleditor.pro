@@ -1,5 +1,5 @@
 TEMPLATE  = app
-QT       += network webkit
+QT       += network webkitwidgets
 
 TARGET    = htmleditor
 HEADERS   = htmleditor.h highlighter.h

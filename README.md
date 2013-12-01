@@ -16,3 +16,4 @@
 * [gweather](gweather)
 * [halfscale](halfscale)
 * [hsvpie](hsvpie)
+* [htmleditor](htmleditor)
