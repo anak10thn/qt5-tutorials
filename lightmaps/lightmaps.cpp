@@ -24,6 +24,7 @@
 #include <QtCore>
 #include <QtGui>
 #include <QtNetwork>
+#include <QtWidgets>
 
 #if QT_VERSION < 0x0040500
 #error You need Qt 4.5 or newer
@@ -103,8 +104,8 @@ public:
         m_emptyTile.fill(Qt::lightGray);
 
         QNetworkDiskCache *cache = new QNetworkDiskCache;
-        cache->setCacheDirectory(QDesktopServices::storageLocation
-                                 (QDesktopServices::CacheLocation));
+        cache->setCacheDirectory(QStandardPaths::standardLocations
+                                 (QStandardPaths::CacheLocation).join('/'));
         m_manager.setCache(cache);
         connect(&m_manager, SIGNAL(finished(QNetworkReply*)),
                 this, SLOT(handleNetworkData(QNetworkReply*)));

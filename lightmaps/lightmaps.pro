@@ -1,6 +1,6 @@
 TEMPLATE = app
 SOURCES = lightmaps.cpp
-QT += network
+QT += network widgets
 
 symbian {
     HEADERS += sym_iap_util.h
