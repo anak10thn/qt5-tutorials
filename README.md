@@ -20,3 +20,4 @@
 * [imagetint](imagetint)
 * [imgzoom](imgzoom)
 * [lightmap](lightmap)
+* [mapzoom](mapzoom)
