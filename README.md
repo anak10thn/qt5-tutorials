@@ -21,3 +21,5 @@
 * [imgzoom](imgzoom)
 * [lightmap](lightmap)
 * [mapzoom](mapzoom)
+* [mobile-hybrid-demo](mobile-hybrid-demo)
+* [panwebview](panwebview)

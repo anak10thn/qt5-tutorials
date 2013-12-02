@@ -22,7 +22,7 @@
 ****************************************************************************/
 
 #include <QtGui>
-#include <QtWebKit>
+#include <QtWebKitWidgets>
 
 class PanWebView : public QWebView
 {
