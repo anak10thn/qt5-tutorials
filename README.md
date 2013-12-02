@@ -19,3 +19,4 @@
 * [htmleditor](htmleditor)
 * [imagetint](imagetint)
 * [imgzoom](imgzoom)
+* [lightmap](lightmap)
