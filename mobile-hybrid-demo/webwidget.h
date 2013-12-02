@@ -32,13 +32,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
 #define WEBWIDGET_H
 
 #include <QGraphicsView>
-#include <QtWebKit/QWebView>
-#include <QtWebKit/QGraphicsWebView>
+#include <QtWebKitWidgets>
+#include <QGraphicsView>
 #include <QTimer>
 #include <QAccelerometer>
 #include <QBasicTimer>
 
-QTM_USE_NAMESPACE
+//QTM_USE_NAMESPACE
 
 class WebWidget : public QGraphicsView
 {

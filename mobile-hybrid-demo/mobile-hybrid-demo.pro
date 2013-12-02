@@ -14,7 +14,7 @@ DEFINES += NETWORKACCESS
 symbian:TARGET.UID3 = 0xA002D387
 
 TARGET=HTML5
-QT+=webkit
+QT+=webkitwidgets
 CONFIG += mobility
 MOBILITY += sensors
 

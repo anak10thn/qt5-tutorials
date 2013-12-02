@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
 
 #include "mainwindow.h"
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <QDir>
 #include <QDebug>
 #include <QFileInfo>
