@@ -23,3 +23,6 @@
 * [mapzoom](mapzoom)
 * [mobile-hybrid-demo](mobile-hybrid-demo)
 * [panwebview](panwebview)
+* [parallaxhome](parallaxhome)
+* [parallaxslide](parallaxslide)
+* [prettybrowser](prettybrowser)
