@@ -1,0 +1,12 @@
+<RCC>
+ <qresource>
+  <file>background.jpg</file>
+  <file>icon1.png</file>
+  <file>icon2.png</file>
+  <file>icon3.png</file>
+  <file>icon4.png</file>
+  <file>icon5.png</file>
+  <file>icon6.png</file>
+  <file>icon7.png</file>
+ </qresource>
+</RCC>
