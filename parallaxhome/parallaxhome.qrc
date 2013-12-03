@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>icons/home-page.svg</file>
+        <file>icons/map-page.svg</file>
+        <file>icons/web-page.svg</file>
+        <file>icons/weather-page.svg</file>
+        <file>icons/contacts-page.svg</file>
+        <file>icons/surfacing.png</file>
+        <file>images/brownies.jpg</file>
+        <file>images/chocolate.jpg</file>
+        <file>images/cookies.jpg</file>
+        <file>images/fish.jpg</file>
+        <file>images/mussels.jpg</file>
+        <file>images/pasta.jpg</file>
+        <file>images/pizza.jpg</file>
+        <file>images/puding.jpg</file>
+        <file>images/sushi.jpg</file>
+        <file>images/trouts.jpg</file>
+    </qresource>
+</RCC>
