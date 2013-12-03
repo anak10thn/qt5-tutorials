@@ -23,7 +23,8 @@
 
 #include <QtCore>
 #include <QtGui>
-#include <QtWebKit>
+#include <QtWebKitWidgets>
+
 
 static QUrl guessUrlFromString(const QString &string)
 {

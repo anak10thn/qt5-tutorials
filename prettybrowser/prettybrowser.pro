@@ -1,3 +1,3 @@
 TEMPLATE = app
 SOURCES = main.cpp
-QT += network webkit
+QT += network webkitwidgets
