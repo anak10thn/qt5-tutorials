@@ -22,6 +22,8 @@
 ****************************************************************************/
 
 #include <QtGui>
+#include <QtWidgets>
+#include <QGraphicsWidget>
 
 #include "ui_controls.h"
 
