@@ -25,6 +25,7 @@
 #include <QtGui>
 #include <QtNetwork>
 #include <QtScript>
+#include <QtWidgets>
 
 #define MONSTER_JS_URL "http://deanm.github.com/pre3d/monster.js"
 
