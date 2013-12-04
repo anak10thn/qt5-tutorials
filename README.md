@@ -26,3 +26,6 @@
 * [parallaxhome](parallaxhome)
 * [parallaxslide](parallaxslide)
 * [prettybrowser](prettybrowser)
+* [qsmonster](qsmonster)
+* [raycasting](raycasting)
+* [s-curve](s-curve)

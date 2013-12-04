@@ -1,0 +1,120 @@
+--- raycasting.cpp	2009-08-08 22:47:18.000000000 +0200
++++ raycasting_landscape.cpp	2009-08-08 22:48:42.000000000 +0200
+@@ -105,7 +105,7 @@
+         const uchar *ptr = buffer.bits();
+         QRgb *start = (QRgb*)(ptr);
+         QRgb stride = buffer.bytesPerLine() / 4;
+-        QRgb *finish = start + stride * bufh;
++        QRgb *finish = start + stride * bufw;
+ 
+         // prepare the texture pointer
+         const uchar *src = textureImg.bits();
+@@ -116,10 +116,10 @@
+         qreal cosa = cos(angle);
+         qreal u = cosa - sina;
+         qreal v = sina + cosa;
+-        qreal du = 2 * sina / bufw;
+-        qreal dv = -2 * cosa / bufw;
++        qreal du = 2 * sina / bufh;
++        qreal dv = -2 * cosa / bufh;
+ 
+-        for (int ray = 0; ray < bufw; ++ray, u += du, v += dv) {
++        for (int ray = 0; ray < bufh; ++ray, u += du, v += dv) {
+             // everytime this ray advances 'u' units in x direction,
+             // it also advanced 'v' units in y direction
+             qreal uu = (u < 0) ? -u : u;
+@@ -192,35 +192,37 @@
+                 tex += TEXTURE_SIZE;
+ 
+             // start from the texture center (horizontally)
+-            int h = static_cast<int>(bufw / hitdist / 2);
++            int h = static_cast<int>(bufh / hitdist / 2);
+             int dy = (TEXTURE_SIZE << 12) / h;
+             int p1 = ((TEXTURE_SIZE / 2) << 12) - dy;
+             int p2 = p1 + dy;
+ 
+             // start from the screen center (vertically)
+-            // y1 will go up (decrease), y2 will go down (increase)
+-            int y1 = bufh / 2;
+-            int y2 = y1 + 1;
+-            QRgb *pixel1 = start + y1 * stride + ray;
+-            QRgb *pixel2 = pixel1 + stride;
++            // y1 will go right (decrease), y2 will go left (increase)
++            int y1 = bufw / 2;
++            int y2 = y1 - 1;
++            QRgb *limit = start + ray * stride;
++            QRgb *pixel1 = limit + y1;
++            QRgb *pixel2 = limit + y2;
+ 
+             // map the texture to the sliver
+-            while (y1 >= 0 && y2 < bufh && p1 >= 0) {
++            while (y2 >= 0 && y1 < bufw && p1 >= 0) {
+                 *pixel1 = tex[p1 >> 12];
+                 *pixel2 = tex[p2 >> 12];
+                 p1 -= dy;
+                 p2 += dy;
+-                --y1;
+-                ++y2;
+-                pixel1 -= stride;
+-                pixel2 += stride;
++                ++y1;
++                --y2;
++                ++pixel1;
++                --pixel2;
+             }
+ 
+             // ceiling and floor
+-            for (; pixel1 > start; pixel1 -= stride)
+-                *pixel1 = qRgb(0, 0, 0);
+-            for (; pixel2 < finish; pixel2 += stride)
++            for (; pixel2 > limit; --pixel2)
+                 *pixel2 = qRgb(96, 96, 96);
++            limit += stride;
++            for (; pixel1 < limit; ++pixel1)
++                *pixel1 = qRgb(0, 0, 0);
+         }
+ 
+         update();
+@@ -241,25 +243,25 @@
+ 
+     void keyPressEvent(QKeyEvent *event) {
+         event->accept();
+-        if (event->key() == Qt::Key_Left)
++        if (event->key() == Qt::Key_Up)
+             angleDelta = 1.3 * M_PI;
+-        if (event->key() == Qt::Key_Right)
++        if (event->key() == Qt::Key_Down)
+             angleDelta = -1.3 * M_PI;
+-        if (event->key() == Qt::Key_Up)
++        if (event->key() == Qt::Key_Right)
+             moveDelta = 2.5;
+-        if (event->key() == Qt::Key_Down)
++        if (event->key() == Qt::Key_Left)
+             moveDelta = -2.5;
+     }
+ 
+     void keyReleaseEvent(QKeyEvent *event) {
+         event->accept();
+-        if (event->key() == Qt::Key_Left)
++        if (event->key() == Qt::Key_Up)
+             angleDelta = (angleDelta > 0) ? 0 : angleDelta;
+-        if (event->key() == Qt::Key_Right)
++        if (event->key() == Qt::Key_Down)
+             angleDelta = (angleDelta < 0) ? 0 : angleDelta;
+-        if (event->key() == Qt::Key_Up)
++        if (event->key() == Qt::Key_Right)
+             moveDelta = (moveDelta > 0) ? 0 : moveDelta;
+-        if (event->key() == Qt::Key_Down)
++        if (event->key() == Qt::Key_Left)
+             moveDelta = (moveDelta < 0) ? 0 : moveDelta;
+     }
+ 
+@@ -284,7 +286,7 @@
+ #if defined(Q_OS_SYMBIAN)
+     w.showMaximized();
+ #else
+-    w.resize(640, 480);
++    w.resize(480, 640);
+     w.show();
+ #endif
+ 
