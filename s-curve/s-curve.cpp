@@ -22,6 +22,7 @@
 ****************************************************************************/
 
 #include <QtGui>
+#include <QtWidgets>
 #include "ui_form.h"
 
 #define PANEL_WIDTH 150
