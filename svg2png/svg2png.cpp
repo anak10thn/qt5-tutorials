@@ -26,7 +26,6 @@
 #include <iostream>
 
 #include <QtGui>
-#include <QtWebKit>
 
 // large enough to enclose the SVG icons
 #define MAGIC_SIZE 4095

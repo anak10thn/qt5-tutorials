@@ -24,7 +24,7 @@
 #ifndef WEBKIT_SVG_RENDERER
 #define WEBKIT_SVG_RENDERER
 
-#include <QWebView>
+#include <QtWebKitWidgets>
 
 class WebKitSVGRenderer : public QWebView
 {
