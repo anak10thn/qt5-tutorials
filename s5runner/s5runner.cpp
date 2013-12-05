@@ -23,10 +23,10 @@
 
 #include <QtCore>
 #include <QtGui>
-#include <QtWebKit>
+#include <QtWebKitWidgets>
 
-#if QT_VERSION <= 0x040500
-#error You must use Qt >= 4.5
+#if QT_VERSION <= 0x050000
+#error You must use Qt >= 5.0.0
 #endif
 
 class S5Runner : public QWebView
