@@ -31,3 +31,5 @@
 * [s-curve](s-curve)
 * [s5runner](s5runner)
 * [svg2png](svg2png)
+* [searchsnap](searchsnap)
+* [snapscroll](snapscroll)

@@ -22,7 +22,7 @@
 ****************************************************************************/
 
 #include <QtGui>
-#include <QtWebKit>
+#include <QtWebKitWidgets>
 
 #define PREVIEW_WIDTH 160
 #define PREVIEW_HEIGHT 120
