@@ -23,6 +23,7 @@
 
 #include <QtGui>
 #include <QtNetwork>
+#include <QtWidgets>
 
 // for the explanation of the trick, check out:
 // http://www.virtualdub.org/blog/pivot/entry.php?id=116
