@@ -1,0 +1,258 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Twitter View</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <layout class="QGridLayout" name="gridLayout_2" >
+    <item row="0" column="1" >
+     <spacer name="verticalSpacer" >
+      <property name="orientation" >
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0" >
+       <size>
+        <width>253</width>
+        <height>179</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="0" >
+     <spacer name="horizontalSpacer" >
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0" >
+       <size>
+        <width>254</width>
+        <height>150</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="1" >
+     <layout class="QGridLayout" name="gridLayout" >
+      <property name="sizeConstraint" >
+       <enum>QLayout::SetFixedSize</enum>
+      </property>
+      <item row="0" column="0" colspan="3" >
+       <widget class="QLabel" name="label_3" >
+        <property name="text" >
+         <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;">
+&lt;p align="center" style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:14pt; font-weight:600;">Login to Twitter&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <spacer name="verticalSpacer_3" >
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Maximum</enum>
+        </property>
+        <property name="sizeHint" stdset="0" >
+         <size>
+          <width>44</width>
+          <height>17</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="label" >
+        <property name="text" >
+         <string>&amp;User Name:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy" >
+         <cstring>passwordEdit</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2" >
+       <widget class="QLineEdit" name="userNameEdit" />
+      </item>
+      <item row="3" column="0" >
+       <widget class="QLabel" name="label_2" >
+        <property name="text" >
+         <string>&amp;Password:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy" >
+         <cstring>userNameEdit</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="2" >
+       <widget class="QLineEdit" name="passwordEdit" >
+        <property name="echoMode" >
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" >
+       <widget class="QLabel" name="progressLabel" >
+        <property name="minimumSize" >
+         <size>
+          <width>105</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet" >
+         <string notr="true" >QLabel { color: red; font-weight: bold;  min-width: 15ex; }</string>
+        </property>
+        <property name="text" >
+         <string>Login Progress.....</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2" >
+       <widget class="QPushButton" name="loginButton" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Maximum" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>&amp;Login</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="2" >
+     <spacer name="horizontalSpacer_2" >
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0" >
+       <size>
+        <width>254</width>
+        <height>150</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="1" >
+     <spacer name="verticalSpacer_2" >
+      <property name="orientation" >
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0" >
+       <size>
+        <width>253</width>
+        <height>179</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_Quit" />
+   </widget>
+   <widget class="QMenu" name="menu_Help" >
+    <property name="title" >
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout_TwitterView" />
+    <addaction name="separator" />
+    <addaction name="actionAbout_Qt" />
+   </widget>
+   <addaction name="menu_File" />
+   <addaction name="menu_Help" />
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+  <action name="action_Quit" >
+   <property name="text" >
+    <string>&amp;Quit</string>
+   </property>
+  </action>
+  <action name="actionAbout_TwitterView" >
+   <property name="text" >
+    <string>About TwitterView</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt" >
+   <property name="text" >
+    <string>About &amp;Qt</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>userNameEdit</tabstop>
+  <tabstop>passwordEdit</tabstop>
+  <tabstop>loginButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="twitterview.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>userNameEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>loginButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>384</x>
+     <y>296</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>485</x>
+     <y>358</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>passwordEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>loginButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>366</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>508</x>
+     <y>370</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

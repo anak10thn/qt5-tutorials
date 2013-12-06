@@ -1,0 +1,7 @@
+1. xsl:include does not work in 4.5. As a result, the template
+   processText is copy/pasted.
+
+2. xsl:analyze-string is not supported for 4.5. When it works we
+   can do more fancy string parsing.
+
+3. XSL encoding error.

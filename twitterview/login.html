@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<style>
+	#login_failed_div {
+		color: red;
+		display: none;
+	}
+</style>
+<script>
+	function init() {
+		twitter.credentialsVerified.connect(credentialsVerified);
+	}
+
+	function login() {
+		var userName = login_form.login_edit.value;
+		var password = login_form.password_edit.value;
+
+		twitter.userName = userName;
+		twitter.password = password;
+
+		document.getElementById('login_failed_div').style.display = 'none';
+		login_form.login_button.disabled = true;
+
+		twitter.verifyCredentials();
+	}
+
+	function credentialsVerified(success) {
+		if (success) {
+			window.location.href = "twitter.html";
+		} else {
+			login_form.password_edit.value = '';
+			document.getElementById('login_failed_div').style.display = 'block';
+			login_form.login_button.disabled = false;
+		}
+	}
+</script>
+</head>
+
+<body onload="init()">
+	<h1> Login to Twitter </h1>
+
+	<form name="login_form" action="" onsubmit="login(); return false">
+		<table>
+		<tr>
+			<td> Login: </td>
+			<td> <input type="text" name="login_edit" id="login_edit"> </td>
+		</tr>
+
+		<tr>
+			<td> Password: </td>
+			<td> <input type="password" name="password_edit" id="password_edit"> </td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td> <input type="submit" name="login_button" value="Login"> </input> </td>
+		</tr>
+		<tr>
+			<td></td>
+			<td> <div id="login_failed_div"> Login failed, please try again </div> </td>
+		</tr>
+		</table>
+	</form>
+
+</body>
+
+</html>

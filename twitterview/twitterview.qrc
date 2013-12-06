@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/">
+	<file>images/loading.gif</file>
+
+	<file>transforms/followers.xsl</file>
+	<file>transforms/friends.xsl</file>
+	<file>transforms/twitterview.xsl</file>
+	<file>transforms/singleuser.xsl</file>
+	<file>transforms/multiuser.xsl</file>
+	<file>transforms/public.xsl</file>
+
+  </qresource>
+</RCC>

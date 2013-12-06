@@ -1,0 +1,20 @@
+TwitterView displays Twitter messages from your friends, followers and 
+the public.
+
+Twitter provides a REST API [1]. Responses may be received in XML, JSON,
+RSS or ATOM. This example receives responses from Twitter in XML and
+translates the XML into HTML using XSL-T. 
+
+The demonstration makes use of the new XSL-T 2.0 support in Qt 4.5.
+Support for XSLT 2.0 is provided through the class QXmlQuery and 
+is part of QtXmlPatterns module. The HTML is displayed using
+Qt/WebKit.
+
+The programs displays the background image, background color, text color,
+link color as customized by the user on the Twitter website.
+
+Portions of the HTML are dynamically created and inserted into the main
+HTML. For example, the list of friends is queried and the XML response 
+is translated into a HTML fragement which is inserted into the main HTML.
+
+[1]. http://apiwiki.twitter.com/REST+API+Documentation

@@ -1,0 +1,37 @@
+<html>
+<head>
+<style>
+    #header_div {
+        background: red;
+    }
+
+    #left_pane_div {
+        background: green;
+        float: left;
+        width: 20%
+    }
+
+    #central_div {
+        background: blue;
+     }
+</style>
+
+<script>
+    function init() {
+        var html = twitter.transform(twitter.credentialsXml(), "credentials.xsl");
+    }
+</script>
+</head>
+
+<body onload="init()">
+    <div id="header_div"> This is the header </div>
+
+    <div>
+        <div id="left_pane_div"> This is the left pane </div>
+
+        <div id="central_div"> This is the central widget </div>
+    </div>
+
+</body>
+
+</html>
