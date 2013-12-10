@@ -39,3 +39,4 @@
 * [weatherinfo](weatherinfo)
 * [webcapture](webcapture)
 * [webmonster](webmonster)
+* [webnightmode](webnightmode)

@@ -1,2 +1,2 @@
 SOURCES = webnightmode.cpp
-QT += network webkit
+QT += network webkitwidgets
