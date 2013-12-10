@@ -23,7 +23,7 @@
 
 #include <QtCore>
 #include <QtGui>
-#include <QtWebKit>
+#include <QtWebKitWidgets>
 
 #define MONSTER_JS_URL "http://deanm.github.com/pre3d/monster.js"
 
