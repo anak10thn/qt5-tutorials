@@ -22,6 +22,7 @@
 ****************************************************************************/
 
 #include <QtGui>
+#include <QtWidgets>
 #include <cmath>
 
 #ifndef M_PI
@@ -223,7 +224,7 @@ int main(int argc, char *argv[])
     if (argc > 1)
         widget.loadImage(argv[1]);
     else
-        widget.loadImage("bridge.jpg");
+        widget.loadImage("://bridge.jpg");
 
 
     return app.exec();
