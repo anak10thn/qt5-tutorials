@@ -33,7 +33,7 @@
 #include <QScrollBar>
 #include <QWebFrame>
 #include <QWebView>
-
+#include <QtWebKitWidgets>
 #include <QDebug>
 
 struct FlickData {

@@ -22,7 +22,7 @@
 ****************************************************************************/
 
 #include <QtGui>
-#include <QtWebKit>
+#include <QtWebKitWidgets>
 
 #if QT_VERSION < 0x040500
 #error You must use Qt >= 4.5.0!

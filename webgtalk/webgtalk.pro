@@ -5,4 +5,4 @@ SOURCES = flickcharm.cpp \
 HEADERS = flickcharm.h
 FORMS = form.ui
 QT += network \
-    webkit
+    webkitwidgets
