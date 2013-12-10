@@ -23,12 +23,12 @@
 
 #include <QtGui>
 #include <QtNetwork>
-#include <QtWebKit>
+#include <QtWebKitWidgets>
 #include <QtXmlPatterns>
 
 #include "mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent, Qt::WFlags flags)
+MainWindow::MainWindow(QWidget *parent, Qt::WindowFlags flags)
     : QMainWindow(parent, flags), m_view(0)
 {
     statusBar()->showMessage(tr("Ready"));
@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent, Qt::WFlags flags)
     QWebSettings *defaultSettings = QWebSettings::globalSettings();
     defaultSettings->setAttribute(QWebSettings::JavascriptEnabled, true);
     defaultSettings->setAttribute(QWebSettings::PluginsEnabled, true);
-    QWebSettings::setOfflineStoragePath(QDesktopServices::storageLocation(QDesktopServices::DataLocation));
+    QWebSettings::setOfflineStoragePath(QStandardPaths::standardLocations(QStandardPaths::DataLocation).join("/"));
     QWebSettings::setOfflineStorageDefaultQuota(500000);
 
     m_rssModel = new QStandardItemModel(this);

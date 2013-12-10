@@ -1,4 +1,4 @@
-QT       += network webkit xml xmlpatterns
+QT       += network webkitwidgets xml xmlpatterns
 
 TARGET = videofeed
 TEMPLATE = app

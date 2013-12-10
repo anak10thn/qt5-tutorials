@@ -33,4 +33,5 @@
 * [svg2png](svg2png)
 * [searchsnap](searchsnap)
 * [snapscroll](snapscroll)
+* [videofeed](videofeed)
 * [weatherinfo](weatherinfo)
