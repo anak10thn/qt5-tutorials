@@ -25,6 +25,8 @@
 #include <QtGui>
 #include <QtNetwork>
 #include <QtSvg>
+#include <QUrl>
+#include <QUrlQuery>
 
 #if defined (Q_OS_SYMBIAN)
 #include "sym_iap_util.h"
@@ -165,8 +167,10 @@ private:
 
     void request(const QString &location) {
         QUrl url("http://www.google.com/ig/api");
-        url.addEncodedQueryItem("hl", "en");
-        url.addEncodedQueryItem("weather", QUrl::toPercentEncoding(location));
+        QUrlQuery qurl;
+        qurl.addQueryItem("hl", "en");
+        qurl.addQueryItem("weather", QUrl::toPercentEncoding(location));
+        url.setQuery(qurl);
 
         QNetworkAccessManager *manager = new QNetworkAccessManager(this);
         connect(manager, SIGNAL(finished(QNetworkReply*)),
