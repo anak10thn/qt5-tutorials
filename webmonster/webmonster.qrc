@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>magic.js</file>
+    </qresource>
+</RCC>

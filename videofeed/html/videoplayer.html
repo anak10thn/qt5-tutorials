@@ -1,0 +1,336 @@
+<!--
+/** This file is part of VideoFeed**
+ *
+ * Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).*
+ *
+ * Contact:  Qt Software Information (qt-info@nokia.com)**
+ *
+ * Commercial Usage
+ * Licensees holding valid Qt Commercial licenses may use this file in 
+ * accordance with the Qt Commercial License Agreement provided with the 
+ * Software or, alternatively, in accordance with the terms contained in 
+ * a written agreement between you and Nokia.
+ *
+ * GNU Lesser General Public License Usage
+ * Alternatively, this file may be used under the terms of the 
+ * GNU Lesser General Public License version 2.1 only as published by the 
+ * Free Software Foundation and appearing in the file LICENSE.LGPL included 
+ * in the packaging of this file.  Please review the following information 
+ * to ensure the GNU Lesser General Public License version 2.1 requirements 
+ * will be met:  http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+ *
+ * GNU General Public License Usage
+ * Alternatively, this file may be used under the terms of the 
+ * GNU General Public License version 3.0 as published by the Free Software 
+ * Foundation and appearing in the file LICENSE.GPL included in the 
+ * packaging of this file.  Please review the following information to ensure 
+ * the GNU General Public License version 3.0 requirements will be 
+ * met: http://www.gnu.org/copyleft/gpl.html.
+ *
+ * If you are unsure which license is appropriate for your use, please contact 
+ * the sales department at qt-sales@nokia.com.
+ */
+!-->
+
+<html>
+<head>
+<style>
+    body { 
+        background-color: #ffffea;
+        margin: 0px;
+        border: 2px solid #B0C4DE;
+        padding: 3px;
+    }
+
+    #central_widget > * { display: none; }
+
+    #loading {
+        text-align: center;
+    }
+
+    #title {
+        text-align: center;
+        font-size: 14pt;
+        font-weight: bold;
+        color: #800000;
+
+         /* ideally, this is relative and we just float the navbar, but floating
+           breaks animations for some reason. */       
+        position: absolute; 
+        top: 10;
+        left: 30%;
+    }
+    
+    #description {
+        height: 150px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    #author, #publisheddate, #duration {
+        display: none;
+    }
+
+    .centered {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 50%;
+    }
+
+
+    #nextButton, #prevButton {
+        border: none;
+        background-repeat: no-repeat;
+        background-position: top left;
+        width: 32px;
+        height: 32px;
+        opacity: 0.5;
+
+        -webkit-transition-property: opacity;
+        -webkit-transition-duration: 0.5s;
+        -webkit-transition-timing-function: linear;
+    }
+
+    #nextButton { background: url(next.png); }
+    #prevButton { background: url(prev.png); }
+
+    #nextButton:hover, #prevButton:hover {
+        opacity: 1.0;
+    }
+
+    #nextButton:disabled, #prevButton:disabled {
+        opacity: 0.1;
+    }
+
+    #clearButton {
+        display: none;
+    }
+    
+    /* example of how we can do opacity animation using keyframes */
+    @-webkit-keyframes 'diagonal-slide' {
+        from {
+            opacity: 1;
+            -webkit-animation-timing-function: linear;
+        }
+
+        50% { opacity: 0.2 }
+        to { opacity: 1; }
+    }
+
+    #loading {
+        -webkit-animation-name: 'diagonal-slide';
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        position: relative;
+    }
+</style>
+<script type="text/javascript" src="json2.js"></script>
+<script type="text/javascript" src="settings.js"></script>
+<script>
+    function setCentralDiv(divId) {
+        var cw = document.getElementById('central_widget');
+        var children = cw.children;
+        for (var i = 0; i < children.length; i++) {
+            if (children[i].id == undefined)
+                continue;
+            if (children[i].id == divId) {
+                children[i].style.display = 'block';
+            } else {
+                children[i].style.display = 'none';
+            }
+        }
+    }
+
+    function showWelcome() {
+        setCentralDiv('welcome');
+    }
+
+    function showLoading(preloadDesc) {
+        hideTitle(1);
+        hideDescription(1);
+        setTimeout(function() {
+                       document.getElementById('description').innerHTML = preloadDesc;
+                   }, 600);
+        document.getElementById('embed-video-here').innerHTML = '';
+        document.getElementById('loading').style.display = 'block';
+    }
+
+    function showLoadError() {
+        setCentralDiv('loadError');
+    }
+
+    function hideTitle(secs) {
+        var title = document.getElementById('title');
+        title.style.webkitTransition = 'top ' + secs + 's ease-in';
+        title.style.top = "-100px";
+    }
+    
+    function showTitle(text, secs) {
+        var title = document.getElementById('title');
+        title.innerHTML = text;
+        title.style.webkitTransition = 'top ' + secs + 's ease-in';
+        title.style.top = "10px";
+    }
+    
+    function showDescription(text, secs) {
+        var desc = document.getElementById('description');
+        if (desc.innerHTML != text)
+            desc.innerHTML = text;
+        desc.style.webkitTransition = '-webkit-transform ' + secs + 's ease-in, opacity ' + secs + 's ease-in';
+        desc.style.webkitTransformOrigin = desc.offsetWidth/2 + " " + desc.offsetHeight/2;
+        desc.style.webkitTransform = 'skew(0deg, 0deg) scale(1)';
+        desc.style.opacity = '1';
+    }
+    
+    function hideDescription(secs) {
+        var desc = document.getElementById('description');
+        desc.style.webkitTransition = '-webkit-transform ' + secs + 's ease-in, opacity ' + secs + 's ease-in';
+        desc.style.webkitTransformOrigin = desc.offsetWidth/2 + " " + desc.offsetHeight/2;
+        desc.style.webkitTransform = 'skew(0deg, 0deg) scale(0)';
+        desc.style.opacity = '0';
+    }
+    
+    function showVideo(video) {
+        document.getElementById('loading').style.display = 'none';
+        hideTitle(0.5);
+        hideDescription(0.5);
+        setTimeout(function() {
+                       setCentralDiv('videoPlayer');
+                       showTitle(video.title, 0.5);
+                       showDescription(video.description, 0.5);
+                       document.getElementById('author').innerHTML = video.author;
+                       document.getElementById('duration').innerHTML = video.duration;
+                       document.getElementById('publisheddate').innerHTML = video.publishedDate;
+                       document.getElementById('embed-video-here').innerHTML = video.html;
+                    }, 510);
+    }
+
+    var settings = null;
+    var videoHistory = [];
+    var curIndex = -1;
+    var nextButton = null, prevButton = null, clearButon = null;
+
+    function addVideo(title, author, desc, pubDate, duration, html) {
+        videoHistory.length = curIndex + 1;
+        var video = {
+            'title': title,
+            'author': author,
+            'description': desc,
+            'publishedDate': pubDate,
+            'duration': duration,
+            'html': html
+        };
+        videoHistory.push(video);
+        ++curIndex;
+        showVideo(video);
+        updateButtons();
+        checkpoint();
+    }
+
+    function setCurrentVideo(index) {
+        if (index >= 0 && index < videoHistory.length) {
+            curIndex = index;
+            showVideo(videoHistory[curIndex]);
+        }
+        updateButtons();
+        checkpoint();
+    }
+
+    function previousVideo() {
+        setCurrentVideo(curIndex - 1);
+    }
+
+    function nextVideo() {
+        setCurrentVideo(curIndex + 1);
+    }
+
+    function clearHistory() {
+        videoHistory = [];
+        curIndex = -1;
+        updateButtons();
+        checkpoint();
+    }
+
+    function updateButtons() {
+        clearButton.disabled = (videoHistory.length == 0);
+        prevButton.disabled = (curIndex <= 0);
+        nextButton.disabled = (videoHistory.length-1 == curIndex);
+    }
+
+    function checkpoint() {
+        settings.removeAll();
+        settings.setValue('historySize', videoHistory.length);
+        for (var i = 0; i < videoHistory.length; i++) {
+            settings.setValue('video' + i, JSON.stringify(videoHistory[i]));
+        }
+        settings.setValue('curIndex', curIndex);
+        settings.commit();
+    }
+
+    function restoreHistory(data) {
+        if (data['curIndex'] != undefined)
+            curIndex = parseInt(data['curIndex']);
+        var historySize = 0;
+        if (data['historySize'] != undefined)
+            historySize = parseInt(data['historySize']);
+        
+        for (var i = 0; i < historySize; i++) {
+            videoHistory[i] = JSON.parse(data['video'+i]);
+        }
+        
+        setCurrentVideo(curIndex);
+    }
+
+    function onLoad() {
+        showWelcome();
+        prevButton = document.getElementById('prevButton');
+        nextButton = document.getElementById('nextButton');
+        clearButton = document.getElementById('clearButton');
+        settings = new Settings("Video Feed");
+        settings.onready = restoreHistory;
+    }
+</script>
+</head>
+
+<body onload="onLoad()">
+
+    <div id="navbar">
+        <input type="button" id="prevButton" value="" onclick="previousVideo()"/>
+        <input type="button" id="nextButton" value="" onclick="nextVideo()"/>
+        <input type="button" id="clearButton" value="Clear" onclick="clearHistory()"/>
+    </div>
+
+    <div id="title"></div>
+
+    <div id="central_widget" style="margin-top: 15px">
+        <h2 id="welcome" class="centered"> Activate any video to your left to play it. You can choose a different feed from the 'Feed' menu. </h2>        <h2 id="loadError" class="centered"> Something bad happened, enjoy the animation instead...</h2>
+
+        <div id="videoPlayer">
+            <table align="center" cellspacing=10 cellpadding=5>
+                <tr>
+                    <td>
+                        <div id="description"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="embed-video-here"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2 id="loading"> Loading video, please wait... </h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="author"></div>
+    <div id="publisheddate"></div>
+    <div id="duration"></div>
+</body>
+
+</html>

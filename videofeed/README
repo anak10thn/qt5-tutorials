@@ -1,0 +1,17 @@
+VideoFeed displays videos from user customizable feeds.
+
+Various video websites like YouTube, Google Videos, TED provide
+the list of videos as RSS, Atom. The demo extracts contents from the
+RSS using XQuery. The list of feeds and the XQuery used to extract
+contents is read in dynamically through configuration files.
+
+The demonstration makes use of the following features of Qt/WebKit
+new in Qt 4.5
+1. Ability to display NPAPI plugins. The videos displayed are currently
+flash content.
+2. Animations and transitions - Animations of the title, description,
+history buttons is carried out using WebKit's CSS animation.
+3. Offline Storage - WebKit implements offline storage feature of HTML5.
+The demo remembers the list of videos watched by user across executions
+and saves/restores it using HTML5 Offline Storage feature.
+

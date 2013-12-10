@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="/">
+	<file>html/videoplayer.html</file>
+	<file>html/settings.js</file>
+	<file>html/json2.js</file>
+
+	<file>html/loading.gif</file>
+	<file>html/next.png</file>
+	<file>html/prev.png</file>
+
+	<file>rss/ted.ini</file>
+	<file>rss/ted.xq</file>
+    <file>rss/youtube_topfav.ini</file>
+    <file>rss/youtube_recently_added.ini</file>
+    <file>rss/youtube_recently_featured.ini</file>
+    <file>rss/youtube_qtstudios.ini</file>
+    <file>rss/youtube.xq</file>
+  </qresource>
+</RCC>
