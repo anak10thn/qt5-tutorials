@@ -1,5 +1,5 @@
 TEMPLATE = app
 TARGET = websnap
 SOURCES = websnap.cpp
-QT += webkit network
+QT += webkitwidgets network
 CONFIG += console

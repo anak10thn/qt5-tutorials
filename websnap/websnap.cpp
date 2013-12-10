@@ -24,7 +24,7 @@
 #include <iostream>
 
 #include <QtGui>
-#include <QtWebKit>
+#include <QtWebKitWidgets>
 
 class WebSnap : public QObject
 {
