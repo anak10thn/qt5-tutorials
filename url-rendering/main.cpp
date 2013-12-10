@@ -21,12 +21,12 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
-#include <QWebView>
+#include <QApplication>
+#include <QtWebKitWidgets>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QBuffer>
-#include <QtConcurrentRun>
+#include <QtConcurrent/QtConcurrent>
 #include <QFutureWatcher>
 #include <QDir>
 
@@ -43,7 +43,8 @@ public:
         setHeader(QNetworkRequest::ContentTypeHeader,QVariant("image/png"));
         open(ReadOnly|Unbuffered);
         setUrl(request.url());
-        QString pattern = request.url().queryItemValue("pattern");
+        QUrlQuery qurl(request.url());
+        QString pattern = qurl.queryItemValue("pattern");
         Qt::BrushStyle brushStyle = Qt::SolidPattern;
         if (pattern == "dense")
             brushStyle = Qt::Dense2Pattern;
@@ -51,10 +52,10 @@ public:
             brushStyle = Qt::CrossPattern;
         else if (pattern == "diagonal")
             brushStyle = Qt::FDiagPattern;
-        const QString radiusString = request.url().queryItemValue("radius");
-        const QString widthString = request.url().queryItemValue("width");
-        const QString heightString = request.url().queryItemValue("height");
-        const QString colorString = request.url().queryItemValue("color");
+        const QString radiusString = qurl.queryItemValue("radius");
+        const QString widthString = qurl.queryItemValue("width");
+        const QString heightString = qurl.queryItemValue("height");
+        const QString colorString = qurl.queryItemValue("color");
         QColor color(colorString);
         bool ok;
         int radius = radiusString.toInt(&ok);

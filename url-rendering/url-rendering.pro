@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network webkit
+QT       += core gui network webkitwidgets
 
 TARGET = url-rendering
 TEMPLATE = app
