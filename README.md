@@ -1,4 +1,4 @@
-##graphics dojo porting to Qt5##
+##graphics dojo ported to Qt5##
 ###ibnu yahya <anak10thn@gmail.com>###
 ####Source from graphics dojo Qt4 : https://qt.gitorious.org/qt-labs/graphics-dojo####
 
